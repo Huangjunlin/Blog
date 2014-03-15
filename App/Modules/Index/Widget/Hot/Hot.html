@@ -1,0 +1,13 @@
+<dl>
+    <dt>热门博文</dt>
+    <foreach name="blog" item="v">
+        <dd>
+            <a href="{:U('/'.$v['id'])}" target="_blank">{$v.title}</a>
+            <span>({$v.click})</span>
+        </dd>
+    </foreach>
+   <!-- <dd>
+        <a href="">对象的产生与生命周期</a>
+        <span>(1024)</span>
+    </dd>-->
+</dl>

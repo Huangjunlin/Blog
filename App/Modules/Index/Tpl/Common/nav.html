@@ -1,0 +1,52 @@
+</head>
+<body>
+<!--头部-->
+<div class='top-search-wrap'>
+    <div class='top-search'>
+        <a href="http://www.dianzihuo.com" target='_blank' id='logo'>
+                <img src="__PUBLIC__/Images/logo.png"/>
+
+        </a>
+        <!-- <p style="color: white; margin-top: 20px;">我不是大牛，但总将会成为大牛!</p> -->
+   
+    </div>
+</div>
+<!--
+<php>
+    import('Class.Category',APP_PATH);
+    $cate = M('cate')->order('sort')->select();
+    $cate = Category::unlimitedForlayout($cate);
+</php>-->
+<div class='top-nav-wrap'>
+    <ul class='nav-lv1'>
+        <li class='nav-lv1-li'>
+            <a href="__GROUP__" class='top-cate'>博客首页</a>
+        </li>
+
+        <nav order="sort ASC">
+            <li class='nav-lv1-li'>
+                <a href="{$url}" class='top-cate'>{$name}</a>
+                <if condition="child">
+                    <ul>
+                        <foreach name="child" item="val">
+                            <li><a href="{:U('/c_'.$val['id'])}">{$val.name}</a></li>
+                        </foreach>
+                    </ul>
+                </if>
+            </li>
+        </nav>
+
+        <!--<foreach name="cate" item="v">
+            <li class='nav-lv1-li'>
+                <a href="" class='top-cate'>{$v.name}</a>
+                <if condition="$v['child']">
+                    <ul>
+                        <foreach name="v.child" item="val">
+                            <li><a href="">{$val.name}</a></li>
+                        </foreach>
+                    </ul>
+                </if>
+            </li>
+        </foreach>-->
+    </ul>
+</div>

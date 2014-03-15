@@ -1,0 +1,24 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+</IfModule>
+
+#去掉URL中要输入blog/index.php/Admin中的index.php方法
+#1.在Apache配置文件httpd.php中修改
+#	<Directory "/Library.WebServer.www">
+#	AllowOverride None改成  All
+#
+#
+#	LoadModule rewrite_module_...so 开启
+#
+#
+#2.项目根目录
+#新建.htaccess文件
+#<IfModule mod_rewrite.c>
+#RewriteEngine on
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteRule ^(.*)$ index.php/$1 [QSA,PT,L]
+#</IfModule>
