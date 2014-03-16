@@ -14,7 +14,7 @@ class BlogAction extends CommonAction{
         $this->display();
     }
 
-    //添加博文
+    //添加博文/修改博文
     public function addBlog(){
         //所属分类
         import('Class.Category',APP_PATH);
@@ -22,6 +22,19 @@ class BlogAction extends CommonAction{
         $this->cate = Category::unlimitedForLevel($cate);
         //博文属性
         $this->attr = M('attr')->select();
+        $this->display();
+    }
+
+    //博文修改
+    public function editBlog(){
+        import('Class.Category',APP_PATH);
+        $cate = M('cate')->order('sort')->select();
+        $this->cate = Category::unlimitedForLevel($cate);
+        //博文属性
+        $this->attr = M('attr')->select();
+        $id = I('id');
+        $this->blog =M('blog')->select($id);
+        p($this->blog);
         $this->display();
     }
 

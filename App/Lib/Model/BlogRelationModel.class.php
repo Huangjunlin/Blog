@@ -11,8 +11,8 @@ class BlogRelationModel extends RelationModel{
     protected $_link = array(
         'attr' =>array(
             'mapping_type'=>MANY_TO_MANY,//多对多的关系
-            'mapping_name'=>'attr',
             'foreign_key'=>'bid',
+            'mapping_name'=>'attr',
             'relation_foreign_key'=>'aid',
             'relation_table'=>'bl_blog_attr',
         ),
